@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#123b3b">
+<title>حِلْقَة | وظائف الحلاقة الرجالية في السودان</title>
+<style>
+:root{--ink:#173c3b;--teal:#167d78;--gold:#d5a84b;--bg:#f4f7f5;--muted:#647573}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Tahoma,Arial;background:var(--bg);color:#183331}
+header{background:linear-gradient(120deg,#103a39,#176e68);color:white;padding:24px 18px 44px}
+nav,.wrap,.hero{max-width:1000px;margin:auto}nav{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-weight:900;font-size:25px}.logo span{color:#f0c96e}nav a{color:white;text-decoration:none;margin-right:14px;font-size:14px}
+.hero{margin-top:38px}.hero h1{font-size:clamp(30px,6vw,48px);line-height:1.25;margin:0 0 12px}
+.hero p{color:#d9e9e5;max-width:620px;line-height:1.9}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.btn{border:0;border-radius:10px;padding:12px 18px;font-weight:750;cursor:pointer;text-decoration:none;display:inline-block}
+.primary{background:var(--gold);color:#24332c}.light{background:white;color:var(--ink)}
+main{max-width:1000px;margin:-20px auto 40px;padding:0 16px}
+.stats,.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.stat,.panel,.job{background:white;border:1px solid #e4ece8;border-radius:16px;padding:18px;box-shadow:0 5px 18px #183c3b0a}
+.stat b{font-size:21px;color:var(--teal)}.section{margin-top:28px}.section h2{font-size:23px}
+.muted{color:var(--muted);font-size:14px;line-height:1.8}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.filters input,.filters select,input,select,textarea{font:inherit;border:1px solid #d5e1dc;border-radius:9px;padding:11px;background:white;width:100%}
+.filters input,.filters select{width:auto;min-width:155px}.job h3{margin:0 0 7px}
+.tag{display:inline-block;background:#e8f4f1;color:#176b63;border-radius:30px;padding:5px 10px;font-size:12px;margin:4px}
+.job .btn{margin-top:12px;background:#e8f4f1;color:#155e58}
+.gridform{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.field label{display:block;font-size:13px;margin-bottom:6px;font-weight:700}.full{grid-column:1/-1}
+.notice{background:#fff7e5;border:1px solid #f0dfb6;padding:13px;border-radius:10px;color:#71561d;font-size:13px;line-height:1.8}
+.hidden{display:none}footer{text-align:center;padding:26px;color:var(--muted);font-size:13px}
+</style></head>
+<body>
+<header><nav><div class="logo">حِلْقَة<span> .</span></div><div><a href="#jobs">الوظائف</a><a href="#barber">للحلاقين</a><a href="#salon">للصالونات</a></div></nav>
+<div class="hero"><h1>فرصتك المهنية<br>في عالم الحلاقة الرجالية</h1>
+<p>منصة سودانية تجمع الحلاقين الباحثين عن فرص عمل بأصحاب الصالونات الباحثين عن الكفاءات. اعرض خبرتك أو أعلن عن وظيفة بسهولة.</p>
+<div class="actions"><a class="btn primary" href="#barber">أنا حلاق — أبحث عن عمل</a><a class="btn light" href="#salon">لدي صالون — أبحث عن حلاق</a></div></div></header>
+<main><div class="stats"><div class="stat"><b>للحلاقين</b><div class="muted">ملف مهني وفرص عمل مناسبة</div></div>
+<div class="stat"><b>لأصحاب الصالونات</b><div class="muted">إعلان وظيفة والوصول للمواهب</div></div>
+<div class="stat"><b>السودان</b><div class="muted">نبدأ محلياً ونتوسع تدريجياً</div></div></div>
+<section class="section" id="jobs"><h2>أحدث فرص العمل</h2><p class="muted">وظائف تجريبية لعرض شكل المنصة، وليست إعلانات حقيقية.</p>
+<div class="filters"><input id="q" placeholder="ابحث بالمسمى أو المنطقة"><select id="area"><option value="">كل المناطق</option><option>الخرطوم</option><option>بحري</option><option>أم درمان</option><option>شرق النيل</option></select>
+<select id="type"><option value="">كل أنواع الدوام</option><option>دوام كامل</option><option>دوام جزئي</option><option>يومية</option><option>بالنسبة</option><option>إيجار كرسي</option></select></div>
+<div class="cards" id="joblist"></div></section>
+<section class="section panel" id="barber"><h2>سجّل كحلاق</h2><p class="muted">أنشئ ملفاً مهنياً يساعد أصحاب الصالونات في الوصول إليك.</p>
+<form id="barberForm" class="gridform"><div class="field"><label>الاسم</label><input required placeholder="اسمك الكامل"></div>
+<div class="field"><label>رقم واتساب</label><input required type="tel" placeholder="09xxxxxxxx"></div>
+<div class="field"><label>المنطقة</label><select required><option value="">اختر المنطقة</option><option>الخرطوم</option><option>بحري</option><option>أم درمان</option><option>شرق النيل</option><option>ولاية أخرى</option></select></div>
+<div class="field"><label>سنوات الخبرة</label><input type="number" min="0" placeholder="مثلاً 3"></div>
+<div class="field"><label>المهارات</label><input placeholder="قصات، تدريج، لحية، صبغة..."></div>
+<div class="field"><label>نوع العمل المطلوب</label><select><option>دوام كامل</option><option>دوام جزئي</option><option>يومية</option><option>بالنسبة</option></select></div>
+<div class="field full"><label><input type="checkbox" required style="width:auto"> أوافق على استخدام بياناتي للتواصل بشأن فرص العمل.</label></div>
+<div class="field full"><button class="btn primary">إرسال طلب التسجيل</button></div></form><div id="barberMsg" class="notice hidden"></div></section>
+<section class="section panel" id="salon"><h2>أعلن عن وظيفة</h2><p class="muted">أخبر الحلاقين بالمواصفات المطلوبة في صالونك.</p>
+<form id="jobForm" class="gridform"><div class="field"><label>اسم الصالون</label><input required></div>
+<div class="field"><label>رقم التواصل</label><input required type="tel"></div>
+<div class="field"><label>المنطقة</label><select required><option value="">اختر المنطقة</option><option>الخرطوم</option><option>بحري</option><option>أم درمان</option><option>شرق النيل</option><option>ولاية أخرى</option></select></div>
+<div class="field"><label>نوع الدوام</label><select><option>دوام كامل</option><option>دوام جزئي</option><option>يومية</option><option>بالنسبة</option><option>إيجار كرسي</option></select></div>
+<div class="field"><label>الخبرة المطلوبة</label><input placeholder="مثلاً سنتان"></div>
+<div class="field"><label>الأجر أو النسبة</label><input placeholder="اختياري"></div>
+<div class="field full"><label>تفاصيل الوظيفة والمهارات</label><textarea rows="3" placeholder="اكتب تفاصيل الوظيفة..."></textarea></div>
+<div class="field full"><button class="btn primary">إرسال إعلان الوظيفة</button></div></form><div id="jobMsg" class="notice hidden"></div></section>
+<div class="notice section"><b>تنبيه:</b> هذه نسخة معاينة للواجهة فقط. النماذج لا تحفظ البيانات ولا تنشر إعلانات فعلية بعد. يلزم ربط قاعدة بيانات وتسجيل دخول آمن ومراجعة الحسابات والوظائف قبل الإطلاق العام.</div>
+</main><footer>حِلْقَة — فرص مهنية للحلاقة الرجالية في السودان</footer>
+<script>
+const jobs=[
+{title:"حلاق رجالي محترف",salon:"صالون تجريبي — بحري",area:"بحري",type:"دوام كامل",exp:"خبرة سنتان فأكثر",tags:["تدريج","قصات حديثة","تهذيب اللحية"]},
+{title:"حلاق للعمل بالنسبة",salon:"صالون تجريبي — أم درمان",area:"أم درمان",type:"بالنسبة",exp:"خبرة سنة فأكثر",tags:["قص شعر","حلاقة لحية"]},
+{title:"مطلوب حلاق دوام جزئي",salon:"صالون تجريبي — الخرطوم",area:"الخرطوم",type:"دوام جزئي",exp:"خبرة جيدة",tags:["قصات","استشوار"]}];
+function render(){let q=document.getElementById('q').value.trim(),a=document.getElementById('area').value,t=document.getElementById('type').value;
+let xs=jobs.filter(j=>(!q||(j.title+j.area+j.salon).includes(q))&&(!a||j.area===a)&&(!t||j.type===t));
+document.getElementById('joblist').innerHTML=xs.length?xs.map(j=>`<article class="job"><h3>${j.title}</h3><div class="muted">${j.salon} · ${j.exp}</div><span class="tag">${j.area}</span><span class="tag">${j.type}</span><div>${j.tags.map(x=>`<span class="tag">${x}</span>`).join('')}</div><button class="btn" onclick="alert('التقديم غير متاح في نسخة المعاينة. سيتم تفعيله بعد ربط النظام.')">تفاصيل الوظيفة</button></article>`).join(''):'<p class="muted">لا توجد نتائج مطابقة.</p>'}
+['q','area','type'].forEach(id=>document.getElementById(id).addEventListener('input',render));render();
+document.getElementById('barberForm').addEventListener('submit',e=>{e.preventDefault();let m=document.getElementById('barberMsg');m.classList.remove('hidden');m.textContent='تم اختبار النموذج في المعاينة فقط، لكن لم يتم حفظ بياناتك أو إرسالها.'});
+document.getElementById('jobForm').addEventListener('submit',e=>{e.preventDefault();let m=document.getElementById('jobMsg');m.classList.remove('hidden');m.textContent='تم اختبار النموذج في المعاينة فقط. لم يتم نشر الوظيفة أو حفظ بياناتها.'});
+</script></body></html>
